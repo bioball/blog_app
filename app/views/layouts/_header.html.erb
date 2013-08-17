@@ -1,9 +1,14 @@
 <header>
   <ul class="nav nav-tabs">
-    <li><%= link_to "Blog", root_path %></li>
-    <li><%= link_to "Contact", contact_path %></li>
+    <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Blog", root_path %></li>
+    <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
     <% if signed_in? %>
-      <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+      <% if current_user.admin? %>
+        <li class="<%= 'active' if current_page?(new_blog_path) %>"><%= link_to "New post", new_blog_path %></li>
+      <% end %>
+      <li class="signout"><%= link_to "Sign out", signout_path, method: "delete" %></li>
+    <% else %>
+      <li class="<%= 'active' if current_page?(signin_path) %>"><%= link_to "Sign in", signin_path %></li>
     <% end %>
   </ul>
 </header>

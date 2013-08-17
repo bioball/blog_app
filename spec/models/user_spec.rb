@@ -15,8 +15,14 @@ describe User do
 
   it { should be_valid }
 
-  describe "remember token" do
-    before { @user.save }
-    its{:remember_token) { should_not be_blank }
+
+  describe "with admin attribute" do
+    before do
+      @user.save!
+      @user.toggle!(:admin)
+    end
+
+  it { should be_admin }
   end
+
 end

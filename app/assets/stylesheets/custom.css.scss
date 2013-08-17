@@ -1,20 +1,113 @@
 @import "bootstrap";
 
 /* universal */
+
+
 header {
-	padding-top: 70px;
+	background-image:url(image_path('mountains.jpg'));
+	background-position: right;
+	padding-top: 300px;
 	text-transform: uppercase;
 	font-weight: bold;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 15pt;
+	li {
+		width: 150px;
+	}
+	.signout {
+		font-size: 12pt;
+		float: right;
+	}
 }
 
 footer {
 	margin-left: 10px;
 }
 
-/* div classes */
+
+/* div ids */
 
 #content {
-	margin-left: 50px;
-	width: 900px;
-	background: transparent repeat-y scroll center;
+	margin-left: 100px;
+	width: 800px;
+	background-color: white;
+}
+
+#newpost {
+	padding: 50px;
+	input {
+		width: 600px;
+		.btn {
+			width: 150px;
+			float: right;
+		}
+	}
+	textarea {
+		width: 600px;
+		height: 300px;
+	}
+}
+
+/* blogs */
+
+.blog {
+	padding-bottom: 50px;
+	margin-bottom: 50px;
+	background-color: white;
+	border-bottom: 1px solid #ccc;
+	h2 {
+		font-family: Palatino, Georgia, serif;
+		font-weight: lighter;
+	}
+
+	.timestamp {
+		color: #444;
+		relative: right;
+		padding-bottom: 10px;
+	}
+}
+
+/* slideout page */
+#slideout {
+	position: fixed;
+	right: 0;
+	top: 40px;
+	height: 80px;
+	width: 40px;
+	-webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background-color: white;
+  padding-top: 60px;
+  border-left: solid 1px #ccc;
+  box-shadow-left: 1px 1px 1px 1px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#slideout_inner {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  bottom: 0;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  background-color: white;
+  width: 300px;
+  font-size: 12pt;
+}
+#slideout:hover {
+  right: 300px;
+}
+#slideout:hover #slideout_inner {
+  right: 0;
+}
+
+#rotate {
+	transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg); 
+  -moz-transform: rotate(-90deg);
+  -ms-transform:rotate(-90deg);
 }

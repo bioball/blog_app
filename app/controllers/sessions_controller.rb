@@ -4,13 +4,11 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find(1)
-    if user.authenticate(params[:session][:password])
-      sign_in user
-      redirect_to root_path
+    auth = request.env["omniauth.auth"]
+    if auth
+      sign_in_with_auth(auth)
     else
-      flash.now[:error] = 'Invalid password'
-      render 'new'
+      sign_in_with_password
     end
   end
 
@@ -18,4 +16,5 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_url
   end
+
 end

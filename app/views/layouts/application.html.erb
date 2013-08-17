@@ -8,15 +8,21 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
-      <div class="container">
-        <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %>
-            </div>
-        <% end %>
-      </div>
       <div id="content">
-        <%= yield %>
+        <div class="container">
+          <% flash.each do |key, value| %>
+              <div class="alert alert-<%= key %>"><%= value %>
+              </div>
+          <% end %>
+        </div>
+      <%= yield %>
       </div>
     <%= render 'layouts/footer' %>
+    <div id="slideout">
+      <div id="rotate">About me</div>
+      <div id="slideout_inner">
+        <%= render 'layouts/contact' %>
+      </div>
+    </div>
   </body>
 </html>

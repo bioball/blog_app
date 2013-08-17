@@ -4,6 +4,9 @@
   <div class="span3 offset0">
     <%= form_for(:session, url: sessions_path) do |f| %>
 
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
       <%= f.label :password %>
       <%= f.password_field :password %>
 
@@ -12,3 +15,6 @@
     <% end %>
   </div>
 </div>
+<p>Alternatively, sign in with the following</p>
+<a href="auth/facebook" class="auth_provider">
+  <img src="<%= image_path('facebook_64.png') %>">Facebook</a>

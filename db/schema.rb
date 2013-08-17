@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130812004021) do
+ActiveRecord::Schema.define(version: 20130815053627) do
+
+  create_table "authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blogs", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "blogs", ["created_at"], name: "index_blogs_on_created_at"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -20,6 +38,9 @@ ActiveRecord::Schema.define(version: 20130812004021) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin",           default: false
+    t.integer  "uid"
+    t.string   "provider"
   end
 
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"

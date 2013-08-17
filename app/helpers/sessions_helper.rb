@@ -5,6 +5,8 @@ module SessionsHelper
     cookies.permanent[:remember_token] = remember_token
     user.update_attribute(:remember_token, User.encrypt(remember_token))
     self.current_user = user
+    flash[:success] = "Signed in"
+    redirect_to root_url
   end
 
   def signed_in?
@@ -23,5 +25,25 @@ module SessionsHelper
   def sign_out
     self.current_user = nil
     cookies.delete(:remember_token)
+  end
+
+  def sign_in_with_auth(auth)
+    user = User.find_by(uid: auth["uid"])
+    if user
+      sign_in user
+    else
+      user = User.create_with_omniauth(auth)
+      sign_in user
+    end
+  end
+
+  def sign_in_with_password
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user.authenticate(params[:session][:password]) == user && user.provider.nil?
+      sign_in user
+    else
+      flash[:failure] = "Email and password do not match"
+      redirect_to signin_path
+    end
   end
 end
