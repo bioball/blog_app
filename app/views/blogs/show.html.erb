@@ -9,7 +9,7 @@
   </div>
   <div class="blogpost">
     <h2><%= @blog.title %></h2>
-    <p><%= @blog.content %></p><br>
+    <p><%= @blog.content.html_safe %></p><br>
     <div id="comments">
       <%= render 'comments/comments' %>
     </div>
