@@ -6,6 +6,11 @@ class BlogsController < ApplicationController
     @blog = current_user.blogs.build
   end
 
+  def show
+    @blog = Blog.find(params[:id])
+    @comments = @blog.comments.all
+  end
+
   def create
     @blog = current_user.blogs.build(blog_params)
     if @blog.save
@@ -15,6 +20,21 @@ class BlogsController < ApplicationController
       render 'static_pages/home'
     end
   end
+
+  def edit
+    @blog = Blog.find(params[:id])
+  end
+
+  def update
+    @blog = Blog.find(params[:id])
+    if @blog.update_attributes(blog_params)
+      flash[:success] = "Blog updated"
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
 
   def destroy
     blog = Blog.find(params[:id])

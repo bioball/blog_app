@@ -1,3 +1,7 @@
-This is a blogging app that I am working on at the moment, running on Rails.
+This is a blogging app, which is currently a work in progress. It runs on ruby 2.0.0 and rails 4.0.0
 
-I will be adding more functionality (users, messages, email, etc), depending on how it goes.
+The end goal is:
+1. To be able to show, create, edit and delete blogs
+2. To have users via both oauth and via the blog app
+3. Users should be able to post comments to specific blogs
+4. Blogs should have labels that describe their content, and people should be able to filter blogs by label

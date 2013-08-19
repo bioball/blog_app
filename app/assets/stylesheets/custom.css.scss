@@ -1,5 +1,12 @@
 @import "bootstrap";
 
+@font-face {
+  font-family: 'Rokkitt';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rokkitt'), url(http://themes.googleusercontent.com/static/fonts/rokkitt/v5/RcB7dRNAX_8JE8zinU47YALUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+}
+
 /* universal */
 
 
@@ -13,6 +20,9 @@ header {
 	font-size: 15pt;
 	li {
 		width: 150px;
+		a {
+			color: white;
+		}
 	}
 	.signout {
 		font-size: 12pt;
@@ -22,13 +32,14 @@ header {
 
 footer {
 	margin-left: 10px;
+	clear: both;
 }
 
 
 /* div ids */
 
 #content {
-	margin-left: 100px;
+	margin-left: 30px;
 	width: 800px;
 	background-color: white;
 }
@@ -51,20 +62,33 @@ footer {
 /* blogs */
 
 .blog {
-	padding-bottom: 50px;
-	margin-bottom: 50px;
-	background-color: white;
+	padding-bottom: 150px;
 	border-bottom: 1px solid #ccc;
+	background-color: white;
+	overflow: hidden;
 	h2 {
-		font-family: Palatino, Georgia, serif;
+		font-family: 'Rokkitt', serif;
 		font-weight: lighter;
+		color: #777;
+		a {
+			color: #777;
+		}
 	}
 
-	.timestamp {
+	.bloginfo {
+		padding-top: 15px;
+		float: left;
+		width: 200px;
 		color: #444;
-		relative: right;
-		padding-bottom: 10px;
 	}
+	.blogpost {
+		float: left;
+		width: 600px;
+	}
+}
+
+.comment {
+	padding: 15px;
 }
 
 /* slideout page */

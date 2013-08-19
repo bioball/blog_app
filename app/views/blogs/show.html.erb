@@ -1,0 +1,27 @@
+<div class="blog">
+  <div class="bloginfo"><%= @blog.created_at.to_formatted_s(:long_ordinal)[0..-6] %><br>
+    <% if signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to "delete", @blog, method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "edit", edit_blog_path(@blog) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="blogpost">
+    <h2><%= @blog.title %></h2>
+    <p><%= @blog.content %></p><br>
+    <div id="comments">
+      <%= render 'comments/comments' %>
+    </div>
+    <% if signed_in? %>
+      <%= form_for([@blog, @blog.comments.build]) do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+      
+        <%= f.text_area :content %><br>
+
+        <%= f.submit "Post", class: "btn" %>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

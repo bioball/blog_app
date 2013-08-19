@@ -1,0 +1,16 @@
+<div id="newpost">
+  <%= form_for(@blog) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+
+    <br>
+
+    <%= f.submit "Save", class: "btn" %>
+
+  <% end %>
+</div>

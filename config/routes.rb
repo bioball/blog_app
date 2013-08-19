@@ -1,6 +1,9 @@
 BlogApp::Application.routes.draw do  get "users/new"
   resources :sessions, only: [:new, :create, :destroy]
-  resources :blogs, only: [:new, :create, :destroy]
+  resources :blogs do
+    resources :comments, shallow: true
+  end
+  resources :comments, only: [:show]
   root 'static_pages#home'
   match '/contact',   to: 'static_pages#contact', via: 'get'
   match '/signin',    to: 'sessions#new',         via: 'get'

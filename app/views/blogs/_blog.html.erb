@@ -1,8 +1,15 @@
 <div class="blog">
-  <h2><%= blog.title %></h2>
-  <p><%= blog.content %></p><br>
-  <span class="timestamp">Posted <%= time_ago_in_words(blog.created_at) %> ago.</span><br>
-  <% if signed_in? %>
-    <%= link_to "delete", blog, method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
+  <div class="bloginfo"><%= blog.created_at.to_formatted_s(:long_ordinal)[0..-6] %><br>
+    <% if signed_in? %>
+      <% if current_user.admin? %>
+        <%= link_to "delete", blog, method: :delete, data: { confirm: "Are you sure?" } %>
+        <%= link_to "edit", edit_blog_path(blog) %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="blogpost">
+    <h2><%= link_to blog.title, blog_path(blog.id) %></h2>
+    <p><%= blog.content %></p><br>
+    <%= link_to "#{blog.comments.count} comments", blog_path(blog.id) %><br>
+  </div>
 </div>

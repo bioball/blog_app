@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :blogs
+  has_many :comments
   has_many :authentications
   before_save { email.downcase! }
   validates :name, presence: true
