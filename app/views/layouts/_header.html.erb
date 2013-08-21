@@ -1,14 +1,21 @@
 <header>
-  <ul class="nav nav-tabs">
-    <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Blog", root_path %></li>
-    <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-    <% if signed_in? %>
-      <% if current_user.admin? %>
-        <li class="<%= 'active' if current_page?(new_blog_path) %>"><%= link_to "New post", new_blog_path %></li>
+  <div class="navbar-top">
+    <%= link_to "planet dirigible", root_path %>
+    <ul class="nav-top-text">
+      <% if signed_in? %>
+        <li>Signed in as <%= current_user.name %></li>
+        <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+      <% else %>
+        <li><%= link_to "Sign in", signin_path %></li>
       <% end %>
-      <li class="signout"><%= link_to "Sign out", signout_path, method: "delete" %></li>
-    <% else %>
-      <li class="<%= 'active' if current_page?(signin_path) %>"><%= link_to "Sign in", signin_path %></li>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
+  <div class="navbar">
+    <li id="one<%= '-active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+    <li id="two"><%= link_to "Food", "#" %></li>
+    <li id="three"><%= link_to "Tech", "#" %></li>
+    <li id="four"><%= link_to "Music", "#" %></li>
+    <li id="five"><%= link_to "Thoughts", "#" %></li>
+    <li id="six<%= '-active' if current_page?(contact_path) %>"><%= link_to "Who is this guy?", contact_path %></li>
+  </div>
 </header>

@@ -6,6 +6,10 @@ class BlogsController < ApplicationController
     @blog = current_user.blogs.build
   end
 
+  def index
+    redirect_to root_path
+  end
+
   def show
     @blog = Blog.find(params[:id])
     @comments = @blog.comments.all
