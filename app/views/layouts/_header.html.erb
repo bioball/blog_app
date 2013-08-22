@@ -1,6 +1,7 @@
 <header>
   <div class="navbar-top">
-    <%= link_to "planet dirigible", root_path %>
+    <div id="logo"><%= link_to "planet dirigible", root_path %>
+    </div>
     <ul class="nav-top-text">
       <% if signed_in? %>
         <li>Signed in as <%= current_user.name %></li>
