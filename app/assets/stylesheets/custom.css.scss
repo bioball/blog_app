@@ -1,6 +1,7 @@
 @import "bootstrap";
 @import url(http://fonts.googleapis.com/css?family=Flamenco:400,300);
 @import url(http://fonts.googleapis.com/css?family=Port+Lligat+Slab);
+@import url(http://fonts.googleapis.com/css?family=Trykker);
 @font-face {
   font-family: 'Rokkitt';
   font-style: normal;
@@ -8,6 +9,15 @@
   src: local('Rokkitt'), url(http://themes.googleusercontent.com/static/fonts/rokkitt/v5/RcB7dRNAX_8JE8zinU47YALUuEpTyoUstqEm5AMlJo4.woff) format('woff');
 }
 
+$homecolor: #2DADC9;
+$foodcolor: #E0A641;
+$techcolor: #E07E16;
+$musiccolor: #93103B;
+$thoughtscolor: #449AD4;
+$aboutcolor: #419C8A;
+$orange: #E07E16;
+$brown: #572F12;
+$main-text-color: #5D5D5D;
 
 /**** universal ****/
 
@@ -16,23 +26,29 @@
 }
 
 p {
-	font-size: 12pt;
+	font-size: 17pt;
 	color: #555;
+	font-family: 'Trykker', serif;
+	color: $main-text-color;
+	line-height: 130%
 }
 li {
-	font-size: 12pt;
-	color: #555;
+	font-size: 17pt;
+	font-family: 'Trykker', serif;
+	color: $main-text-color;
+	line-height: 130%
 }
 
-h2 {
+h1 {
 	font-family: 'Rokkitt', serif;
-	font-weight: lighter;
-	color: #E07E16;
+	font-weight: bold;
+	font-size: 40pt;
+	color: $orange;
 	a {
-		color: #E07E16;
-	}
-	a:hover {
-		color: black;
+		color: $orange;
+		&:hover {
+			color: black;
+		}
 	}
 }
 
@@ -45,87 +61,87 @@ header {
 
 .navbar {
 	#one-active {
-		background-color: #2DADC9;
+		background-color: $homecolor;
 		a {
 			color: white;
 			display: block;
 			padding: 115px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #7BD9ED;
-			color: black;
+			&:hover {
+				background-color: lighten($homecolor, 20%);
+				color: $brown;
+			}
 		}
 	}
 	#one {
-		background-color: #2DADC9;
+		background-color: $homecolor;
 		a {
 			color: white;
 			display: block;
 			padding: 115px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #7BD9ED;
-			color: black;
+			&:hover {
+				background-color: lighten($homecolor, 20%);
+				color: $brown;
+			}
 		}
 	}
 	#two {
-		background-color: #E0A641;
+		background-color: $foodcolor;
 		a {
 			color: white;
 			display: block;
 			padding: 215px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #E3B971;
-			color: black;
+			&:hover {
+				background-color: lighten($foodcolor, 20%);
+				color: $brown;
+			}
 		}
 	}
 	#three {
-		background-color: #E07E16;
+		background-color: $techcolor;
 		a {
 			color: white;
 			display: block;
 			padding: 175px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #E3A059;
-			color: black;
+			&:hover {
+				background-color: lighten($techcolor, 20%);
+				color: $brown;
+			}
 		}
 	}
 	#four {
-		background-color: #93103B;
+		background-color: $musiccolor;
 		a {
 			color: white;
 			display: block;
 			padding: 80px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #942B4D;
-			color: black;
+			&:hover {
+				background-color: lighten($musiccolor, 50%);
+				color: $brown;
+			}
 		}
 	}
 	#five {
-		background-color: #449AD4;
+		background-color: $thoughtscolor;
 		a {
 			color: white;
 			display: block;
 			padding: 150px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #7ABAE6;
-			color: black;
+			&:hover {
+				background-color: lighten($thoughtscolor, 20%);
+				color: $brown;
+			}
 		}
 	}
 	#six {
-		background-color: #419C8A;
+		background-color: $aboutcolor;
 		a {
 			color: white;
 			display: block;
 			padding: 75px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #67C7B4;
-			color: black;
+			&:hover {
+				background-color: lighten($aboutcolor, 20%);
+				color: $brown;
+			}
 		}
 	}
 	#six-active {
@@ -134,11 +150,10 @@ header {
 			color: white;
 			display: block;
 			padding: 75px 12px 8px 8px;
-		}
-		a:hover {
-			background-color: #67C7B4;
-			color: black;
-			text-decoration: none;
+			&:hover {
+				background-color: #67C7B4;
+				color: $brown;
+			}
 		}
 	}
 	li {
@@ -151,7 +166,7 @@ header {
 		text-transform: lowercase;
 		font-family: 'Flamenco', Arial, serif;
 		font-size: 25pt;
-		text-shadow: 0px 1px 0px #000000;
+		text-shadow: 1px 2px 0px #000000;
 	}
 }
 .navbar-top {
@@ -202,14 +217,13 @@ footer {
 
 #content {
 	margin-left: 30px;
-	width: 800px;
+	width: 1200px;
 	background-color: white;
 }
 
 #newpost {
 	padding: 50px;
 	input {
-		width: 600px;
 		.btn {
 			width: 150px;
 			float: right;
@@ -219,6 +233,10 @@ footer {
 		width: 600px;
 		height: 300px;
 	}
+}
+
+#tagboxes {
+	padding-left: 30px;
 }
 
 /**** blogs ****/
@@ -236,11 +254,39 @@ footer {
 		color: #777;
 	}
 	.blogpost {
+		width: 900px;
 		float: left;
-		width: 600px;
 	}
 }
 
 .comment {
 	padding: 15px;
+}
+
+/**** tags ****/
+
+.tags {
+	li {
+		display: inline-block;	
+		margin: 5px 10px 30px 10px;
+		color: white;
+		padding: 3px 8px 3px 8px;
+		border-radius: 5px;
+		text-align: center;
+	}
+	#food {
+		background-color: $foodcolor;
+	}
+
+	#technology {
+		background-color: $techcolor;
+	}
+
+	#music {
+		background-color: $musiccolor;
+	}
+
+	#thoughts {
+		background-color: $thoughtscolor;
+	}
 }

@@ -8,7 +8,14 @@
     <% end %>
   </div>
   <div class="blogpost">
-    <h2><%= link_to blog.title, blog_path(blog.id) %></h2>
+    <h1><%= link_to blog.title, blog_path(blog.id) %></h1>
+    <div class="tags">
+      <% blog.tags.each do |tag| %>
+        <li id="<%= tag.category.downcase %>">
+          <%= tag.category %>
+        </li>
+      <% end %>
+    </div>
     <p><%= blog.content.html_safe %></p><br>
     <%= link_to pluralize(blog.comments.count, 'comment'), blog_path(blog.id) %><br>
   </div>

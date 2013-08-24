@@ -6,6 +6,13 @@
     <%= f.label :content %>
     <%= f.text_area :content %>
 
+    <% Tag.all.each do |tag| %>
+      <div class="tags">
+        <%= f.label :tag %>
+        <%= check_box_tag "#{f.object_name}[tag_ids][]", tag.id, f.object.tags.include?(tag) %>
+      </div>
+    <% end %>
+
     <br>
 
     <%= f.submit "Post", class: "btn" %>

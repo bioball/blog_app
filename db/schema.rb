@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130817045253) do
-
-  create_table "authentications", force: true do |t|
-    t.integer  "user_id"
-    t.string   "provider"
-    t.string   "uid"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20130824152117) do
 
   create_table "blogs", force: true do |t|
     t.string   "title"
@@ -31,6 +23,11 @@ ActiveRecord::Schema.define(version: 20130817045253) do
 
   add_index "blogs", ["created_at"], name: "index_blogs_on_created_at"
 
+  create_table "blogs_tags", id: false, force: true do |t|
+    t.integer "blog_id"
+    t.integer "tag_id"
+  end
+
   create_table "comments", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
@@ -40,6 +37,12 @@ ActiveRecord::Schema.define(version: 20130817045253) do
   end
 
   add_index "comments", ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
+
+  create_table "tags", force: true do |t|
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "name"

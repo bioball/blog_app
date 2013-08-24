@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :admin_user, only: [:new, :create, :destroy]
+  before_action :admin_user, only: [:new, :create, :destroy, :edit, :update]
   include SessionsHelper
 
   def new
@@ -47,10 +47,14 @@ class BlogsController < ApplicationController
     redirect_to root_url
   end
 
+  def food
+    @foodblogs = Tag.find(1).blogs
+  end
+
   private
 
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content, :tag_ids => [])
     end
 
     def admin_user
