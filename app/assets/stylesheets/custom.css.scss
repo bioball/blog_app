@@ -48,6 +48,7 @@ h1 {
 		color: $orange;
 		&:hover {
 			color: black;
+			text-decoration: none;
 		}
 	}
 }
@@ -69,6 +70,7 @@ header {
 			&:hover {
 				background-color: lighten($homecolor, 20%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -81,6 +83,7 @@ header {
 			&:hover {
 				background-color: lighten($homecolor, 20%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -93,6 +96,7 @@ header {
 			&:hover {
 				background-color: lighten($foodcolor, 20%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -105,6 +109,7 @@ header {
 			&:hover {
 				background-color: lighten($techcolor, 20%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -117,6 +122,7 @@ header {
 			&:hover {
 				background-color: lighten($musiccolor, 50%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -129,6 +135,7 @@ header {
 			&:hover {
 				background-color: lighten($thoughtscolor, 20%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -141,6 +148,7 @@ header {
 			&:hover {
 				background-color: lighten($aboutcolor, 20%);
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -153,6 +161,7 @@ header {
 			&:hover {
 				background-color: #67C7B4;
 				color: $brown;
+				text-decoration: none;
 			}
 		}
 	}
@@ -245,7 +254,8 @@ footer {
 	padding-bottom: 150px;
 	border-bottom: 1px solid #ccc;
 	background-color: white;
-	overflow: hidden;
+	overflow: auto;
+	display: block;
 
 	.bloginfo {
 		padding-top: 17px;
@@ -273,6 +283,7 @@ footer {
 		padding: 3px 8px 3px 8px;
 		border-radius: 5px;
 		text-align: center;
+		font-size: 15px;
 	}
 	#food {
 		background-color: $foodcolor;
