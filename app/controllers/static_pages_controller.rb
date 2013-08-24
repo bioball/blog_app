@@ -3,6 +3,6 @@ class StaticPagesController < ApplicationController
     @blogs = User.find(1).blogs.paginate(page: params[:page], :per_page => 5 )
   end
 
-  def contact
+  def about
   end
 end

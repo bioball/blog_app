@@ -24,6 +24,18 @@ li {
 	color: #555;
 }
 
+h2 {
+	font-family: 'Rokkitt', serif;
+	font-weight: lighter;
+	color: #E07E16;
+	a {
+		color: #E07E16;
+	}
+	a:hover {
+		color: black;
+	}
+}
+
 /**** header ****/
 header {
 	background-image: url(image_path("headerbackground1.png"));
@@ -216,17 +228,6 @@ footer {
 	border-bottom: 1px solid #ccc;
 	background-color: white;
 	overflow: hidden;
-	h2 {
-		font-family: 'Rokkitt', serif;
-		font-weight: lighter;
-		color: #E07E16;
-		a {
-			color: #E07E16;
-		}
-		a:hover {
-			color: black;
-		}
-	}
 
 	.bloginfo {
 		padding-top: 17px;
