@@ -226,8 +226,7 @@ footer {
 
 #content {
 	margin-left: 30px;
-	width: 1200px;
-	background-color: white;
+	max-width: 1200px;
 }
 
 #newpost {
@@ -252,10 +251,8 @@ footer {
 
 .blog {
 	padding-bottom: 150px;
-	border-bottom: 1px solid #ccc;
 	background-color: white;
 	overflow: auto;
-	display: block;
 
 	.bloginfo {
 		padding-top: 17px;
@@ -264,7 +261,7 @@ footer {
 		color: #777;
 	}
 	.blogpost {
-		width: 900px;
+		max-width: 900px;
 		float: left;
 	}
 }
