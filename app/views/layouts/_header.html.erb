@@ -12,11 +12,14 @@
     </ul>
   </div>
   <div class="navbar">
-    <li id="one<%= '-active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+    <li id="one"><%= link_to "Home", root_path %></li>
     <li id="two"><%= link_to "Food", tag_path('food') %></li>
     <li id="three"><%= link_to "Tech", tag_path('technology') %></li>
     <li id="four"><%= link_to "Music", tag_path('music') %></li>
     <li id="five"><%= link_to "Thoughts", tag_path('thoughts') %></li>
-    <li id="six<%= '-active' if current_page?(about_path) %>"><%= link_to "Who is this guy?", about_path %></li>
+    <li id="six"><%= link_to "Who is this guy?", about_path %></li>
+    <% if signed_in? && current_user.admin? %>
+      <li id="seven"><%= link_to "Post", new_blog_path %></li>
+    <% end %>
   </div>
 </header>
