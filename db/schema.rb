@@ -36,8 +36,6 @@ ActiveRecord::Schema.define(version: 20130824152117) do
     t.integer  "blog_id"
   end
 
-  add_index "comments", ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
-
   create_table "tags", force: true do |t|
     t.string   "category"
     t.datetime "created_at"
