@@ -1,7 +1,15 @@
-This is a blogging app, which is currently a work in progress. It runs on ruby 2.0.0 and rails 4.0.0
+Blog app
+========
 
-The end goal is:
-1.  To be able to show, create, edit and delete blogs
-2.  To have users via both oauth and via the blog app
-3.  Users should be able to post comments to specific blogs
-4.  Blogs should have labels that describe their content, and people should be able to filter blogs by label
+This is a blogging app created as an exercise in Rails, HTML, CSS and SQL. The app has the following features
+
+1.   It allows users to sign in via Facebook oauth
+2.   It allows signed in users CRUD actions comments
+3.	 It allows the admin user CRUD actions for blogs and tags
+4.   It categorizes blog posts into various categories, and allows you to filter blog posts by tags
+5.   The blog posts may be formatted using Markdown language
+
+Deployment
+----------
+
+The app is currently deployed on Heroku at [http://planetdirigible.herokuapp.com/](http://planetdirigible.herokuapp.com/)
