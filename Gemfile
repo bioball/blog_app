@@ -7,7 +7,9 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
 
 group :development do
   gem 'sqlite3'

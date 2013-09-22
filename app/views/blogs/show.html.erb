@@ -16,7 +16,7 @@
         </li>
       <% end %>
     </div>
-    <p><%= @blog.content.html_safe %></p><br>
+    <%= markdown(@blog.content) %><br>
     <div id="comments">
       <%= render 'comments/comments' %>
     </div>

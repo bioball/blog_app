@@ -3,15 +3,20 @@
     <%= f.label :title %>
     <%= f.text_field :title %>
 
+    <br>
+
+    <%= f.label "Categories" %>
+    <div id="tagboxes">
+      <% Tag.all.each do |tag| %>
+        <label>
+          <%= check_box_tag "#{f.object_name}[tag_ids][]", tag.id, f.object.tags.include?(tag) %>
+          <%= tag.category -%>
+        </label>
+      <% end %>
+    </div>
+
     <%= f.label :content %>
     <%= f.text_area :content %>
-
-    <% Tag.all.each do |tag| %>
-      <div class="tags">
-        <%= f.label :tag %>
-        <%= check_box_tag "#{f.object_name}[tag_ids][]", tag.id, f.object.tags.include?(tag) %>
-      </div>
-    <% end %>
 
     <br>
 

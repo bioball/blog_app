@@ -16,7 +16,7 @@
         </li>
       <% end %>
     </div>
-    <p><%= blog.content.html_safe %></p><br>
+    <%= markdown(blog.content) %><br>
     <%= link_to pluralize(blog.comments.count, 'comment'), blog_path(blog.id) %><br>
   </div>
 </div>
