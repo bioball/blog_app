@@ -20,5 +20,7 @@ Deployment
 The app is currently deployed on Heroku at [http://planetdirigible.herokuapp.com/](http://planetdirigible.herokuapp.com/)
 
 Feel free to check it out. The admin sign-in credentials are:
+
 Username: percy@percival.com
+
 Password: example
