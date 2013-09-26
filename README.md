@@ -15,9 +15,7 @@ Features
 Deployment
 ----------
 
-The app is currently deployed on Heroku at [http://planetdirigible.herokuapp.com/](http://planetdirigible.herokuapp.com/)
-
-Please excuse the complete nonsense posts that are on there.
+The app is currently deployed on Heroku at [http://planetdirigible.herokuapp.com/](http://planetdirigible.herokuapp.com/). Please excuse the complete nonsense posts that are on there.
 
 The admin sign-in credentials are below. Please feel free to add posts.
 
